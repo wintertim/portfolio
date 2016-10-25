@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width; initial-scale=1.0;">
+        <link rel="stylesheet" href="/assets/css/layout.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" integrity="sha256-AIodEDkC8V/bHBkfyxzolUMw57jeQ9CauwhVW6YJ9CA=" crossorigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <title></title>
+    </head>
+    <body>
+      <div class="header">
+        <div class="navBar">
+          <div class="header-background"></div>
+          <div class="header-background-trim t1"></div>
+          <div class="header-background-trim t2"></div>
+          <div class="header-background-trim t3"></div>
+          <div class="header-background-trim t4"></div>
+
+          <div class="mobile-nav">
+            <div class="myName shadow">
+              <h3>Tim Parsons</h3>
+            </div>
+            <div class="menu-icon" id="mobile-menu-enter">
+              <i class="fa fa-bars fa-3x" aria-hidden="true"></i>
+            </div>
+            <div class="mobile-menu" id="mobile-menu">
+              <div class="window round shadow">
+                <div class="title-bar">
+                  <h2>Menu</h2>
+                  <div class="exit-container">
+                    <i class="fa fa-times fa-4x" id="mobile-menu-exit" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <hr>
+                <br>
+                <div class="window-contents">
+                  <h4><a href="#"><div><i class="fa fa-github fa-2x" aria-hidden="true"></i></div><div>My Projects!</div></a></h4>
+                  <h4><a href="#"><div><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></div><div>Follow Me!</div></a></h4>
+                  <h4><a href="#"><div><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></div><div>Connect!</div></a></h4>
+                  <h4><a href="#"><div><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></div><div>Add Me!</div></a></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="desktop-nav">
+            <div class="myName shadow">
+              <h3>Tim Parsons</h3>
+            </div>
+            <div class="primary-section">
+              <ul>
+
+              </ul>
+            </div>
+            <div class="secondary-section">
+              <ul class="shadow">
+                <li> <a href="#"><i class="fa fa-github fa-4x" aria-hidden="true"></i></a></li>
+                <li> <a href="#"><i class="fa fa-twitter fa-4x" aria-hidden="true"></i></a></li>
+                <li> <a href="#"><i class="fa fa-linkedin fa-4x" aria-hidden="true"></i></a></li>
+                <li> <a href="#"><i class="fa fa-facebook fa-4x" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+        <div class="container">
+          <div class="row">
+                <div class="color1-background shadow round one column">
+                    <h1>test</h1>
+                </div>
+                <div class="color2background shadow round eleven columns">
+                    <h1>test</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="color1-background shadow round two columns">
+                    <h2>h2</h2>
+                </div>
+                <div class="color2background shadow round ten columns">
+                    <h2>h2</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="color1-background shadow round three columns">
+                    <h3>h3</h3>
+                </div>
+                <div class="color2background shadow round nine columns">
+                    <h3>h3</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="color1-background shadow round four columns">
+                    <h4>h4</h4>
+                </div>
+                <div class="color2background shadow round eight columns">
+                    <h4>h4</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="color1-background shadow round five columns">
+                    <h5>h5</h5>
+                </div>
+                <div class="color2background shadow round seven columns">
+                    <h5>h5</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="color1-background shadow round six columns">
+                    <h6>h6</h6>
+                </div>
+                <div class="color2background shadow round six columns">
+                    <h6>h6</h6>t
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script type="text/javascript">
+      /*Event listener register functions*/
+      function addListener(element, eventName, handler) {
+        if (element.addEventListener) {
+          element.addEventListener(eventName, handler, false);
+        }
+        else if (element.attachEvent) {
+          element.attachEvent('on' + eventName, handler);
+        }
+        else {
+          element['on' + eventName] = handler;
+        }
+      }
+      function removeListener(element, eventName, handler) {
+        if (element.addEventListener) {
+          element.removeEventListener(eventName, handler, false);
+        }
+        else if (element.detachEvent) {
+          element.detachEvent('on' + eventName, handler);
+        }
+        else {
+          element['on' + eventName] = null;
+        }
+      }
+
+      /*Add event for the mobile menu button*/
+      addListener(document.getElementById('mobile-menu-enter'), 'click', showMenu);
+      function showMenu () {
+        document.getElementById("mobile-menu").style.display = "block"; //show menu
+        addListener(document.getElementById('mobile-menu-exit'), 'click', removeMenu); //register event for button that closes menu
+        removeListener(document.getElementById('mobile-menu-enter'), 'click', removeMenu);
+      }
+      function removeMenu () {
+        document.getElementById("mobile-menu").style.display = "none"; //remove menu
+        removeListener(document.getElementById('mobile-menu-exit'), 'click', removeMenu); //remove event listener
+        addListener(document.getElementById('mobile-menu-enter'), 'click', removeMenu);
+      }
+
+
+
+    </script>
+</html>
